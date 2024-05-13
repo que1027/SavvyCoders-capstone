@@ -19,17 +19,23 @@ p{
 #ESubject{
 width:40%;
 border-radius: 16px;
+
+
 }
 
 #EBody{
     width: 40%;
     height: 20vw;
     border-radius: 16px;
+   
+   
 }
 #ESubmit{
 width:41%;
 border-radius: 16px;
 background-color:green; 
+
+
 }
 #name{
     position:absolute;
@@ -80,4 +86,19 @@ button{
 #contactMe{
     color:white;
     background-color:green; 
+}
+form{
+    display:flex;
+  flex-direction: column; 
+
+
+
+
+
+  /*
+  trying to center
+
+  justify-content: center;
+  margin:auto;  */
+ 
 }
