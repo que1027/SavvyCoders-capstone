@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+}
+#namesAndPic{
+    display:flex;
+    flex-direction: row;
+}
+#names{
+    display:flex;
+    flex-direction: column;
+}
+#name{
+    color:white;
+    font-size:8vw;
+}
+#lname{
+    color:green;
+    font-size:8vw;
+}
+#list{
+    color:white;
+    overflow-y:scroll;
+    font-size: 5vw;
+    height:40vw;
+    width:35vw;
+}
+#headshot{
+    display:flex;
+    padding-left: 20vw;
+    height:50vw;
+    width:30vw;
+
+    margin:auto;
+}
+
+button{
+    border-radius: 16px;
+    font-size: 2vw;
+}
+.whiteButton{
+    background-color:white;
+}
+.greenButton{
+    color:white;
+    background-color:green; 
+}
