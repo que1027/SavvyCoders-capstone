@@ -44,3 +44,98 @@ button{
     color:white;
     background-color:green; 
 }
+#hbMenu{
+display: none;
+}
+#menu{
+    display:flex;
+    flex-direction: row;
+}
+footer{
+    position:absolute;
+    display: flex;
+    top:60vw;
+    
+}
+
+
+
+
+
+
+/* phone view */
+@media (max-width:667px) {
+    body{
+        background-color: black;
+    }
+    #namesAndPic{
+        display:flex;
+        flex-direction: column;
+    }
+    #names{
+        display:flex;
+        flex-direction: row;
+    }
+    #name{
+        color:white;
+        font-size:8vw;
+    }
+    #lname{
+        color:green;
+        font-size:8vw;
+    }
+    #list{
+        color:white;
+        overflow-y:scroll;
+        font-size: 5vw;
+        height:40vw;
+        width:35vw;
+    }
+    #headshot{
+        display:flex;
+        padding-left: 20vw;
+        height:120vw;
+        width:90vw;
+        margin:auto;
+    }
+    
+    button{
+        border-radius: 16px;
+        font-size: 2vw;
+    }
+    .whiteButton{
+        background-color:white;
+    }
+    .greenButton{
+        color:white;
+        background-color:green; 
+    }
+    #menu{
+        display: inline;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #hbMenu{
+        display:inline;
+        width:50px;
+        height:50px;
+        color: green;
+    }
+    footer{
+        position:absolute;
+        display: flex;
+        top:170vw;
+        
+    }
+    #buttons{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        width:100px;
+        top:10px;
+    }
+
+
+}
+
