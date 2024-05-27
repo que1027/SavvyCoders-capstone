@@ -1,15 +1,16 @@
 import Navigo from "navigo";
 import { camelCase } from "lodash";
 
-import { header, nav, main, footer } from "./components";
+import { header, main, footer } from "./components";
 import * as store from "./store";
+import axios from "axios";
 
 const router = new Navigo("/");
 
 function render(state = store.home) {
-    document.quereyselector("#root").innerHTML = `
+    document.querySelector("#root").innerHTML = `
     ${header(state)}
-    ${nav(store.nav)}
+    
     ${main(state)}
     ${footer()}
     `;
