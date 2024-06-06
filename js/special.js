@@ -3,6 +3,9 @@ let fName = document.getElementById("name");
 let lName = document.getElementById("lname");
 const fNameSplit = fName.innerHTML.split("");
 const lNameSplit = lName.innerHTML.split("");
+const hbMenu = document.getElementById("hbMenu");
+const slide = document.getElementById("slide");
+const buttons = document.getElementById("buttons");
 
 letters = 0;
 function change(){
@@ -21,4 +24,7 @@ lName.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taylor";
 }
 }
 
-
+hbMenu.addEventListener("click", ()=>{
+buttons.style.display = "flex"
+slide.style.left = "-1vw";
+});
