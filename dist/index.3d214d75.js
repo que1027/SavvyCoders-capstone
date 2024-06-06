@@ -589,38 +589,40 @@ var _navigo = require("navigo");
 var _navigoDefault = parcelHelpers.interopDefault(_navigo);
 var _lodash = require("lodash");
 var _components = require("./components");
-var _store = require("./store");
+var _indexJs = require("./store/index.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const router = new (0, _navigoDefault.default)("/");
-function render(state = _store.home) {
+function render(state = _indexJs.home) {
     document.querySelector("#root").innerHTML = `
     ${(0, _components.header)(state)}
-    
     ${(0, _components.main)(state)}
+    ${(0, _components.nav)(_indexJs.nav)}
     ${(0, _components.footer)()}
     `;
     router.updatePageLinks();
     afterRender();
 }
+function afterRender() {
+    // add menu toggle to bars icon in nav bar
+    document.querySelector(".nav-bars").addEventListener("click", ()=>{
+        document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+    });
+}
 router.on({
-    "/": ()=>render(_store.home),
-    ":iew": ({ data, params })=>{
+    "/": ()=>render(_indexJs.home),
+    ":view": ({ data, params })=>{
         //change the :view data element to camel case and remove any dashes(support for multi-woord views)
         const view = data?.view ? (0, _lodash.camelCase)(data.view) : "home"; //help me better understand this line
-        if (view in _store) render(_store[view]);
+        if (view in _indexJs) render(_indexJs[view]);
         else {
-            render(_store.viewNotFound);
+            render(_indexJs.viewNotFound);
             console.log(`View ${view} not defined`);
         }
     }
 }).resolve();
-function afterRender() {
-//add menu toggle to bars icon in nav bar
-//want to understand the after render because I will need to make changes to it.
-}
 
-},{"navigo":"fuSlc","lodash":"3qBDj","./components":"ePLYF","./store":"71t6G","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fuSlc":[function(require,module,exports) {
+},{"navigo":"fuSlc","lodash":"3qBDj","./components":"ePLYF","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./store/index.js":"71t6G"}],"fuSlc":[function(require,module,exports) {
 !function(t, n) {
     module.exports = n();
 }("undefined" != typeof self ? self : this, function() {
@@ -15375,17 +15377,19 @@ var global = arguments[3];
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "header", ()=>(0, _headerDefault.default));
-//export { default as nav } from "./nav";
+parcelHelpers.export(exports, "nav", ()=>(0, _navDefault.default));
 parcelHelpers.export(exports, "main", ()=>(0, _mainDefault.default));
 parcelHelpers.export(exports, "footer", ()=>(0, _footerDefault.default));
 var _header = require("./header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
+var _nav = require("./nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
 var _main = require("./main");
 var _mainDefault = parcelHelpers.interopDefault(_main);
 var _footer = require("./footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
 
-},{"./header":"gMwGB","./main":"j0gQX","./footer":"4psvf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gMwGB":[function(require,module,exports) {
+},{"./header":"gMwGB","./main":"j0gQX","./footer":"4psvf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./nav":"kuKN0"}],"gMwGB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
@@ -15610,8 +15614,8 @@ parcelHelpers.export(exports, "home", ()=>(0, _homeDefault.default));
 parcelHelpers.export(exports, "meetMe", ()=>(0, _meetMeDefault.default));
 parcelHelpers.export(exports, "myAwards", ()=>(0, _myAwardsDefault.default));
 parcelHelpers.export(exports, "myProjects", ()=>(0, _myProjectsDefault.default));
-parcelHelpers.export(exports, "contactMe", ()=>(0, _contactMeDefault.default)) //export { default as viewNotFound } from "./viewNotFound";
-;
+parcelHelpers.export(exports, "contactMe", ()=>(0, _contactMeDefault.default));
+parcelHelpers.export(exports, "viewNotFound", ()=>(0, _viewNotFoundDefault.default));
 var _about = require("./about");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
 var _home = require("./home");
@@ -15624,8 +15628,10 @@ var _myProjects = require("./myProjects");
 var _myProjectsDefault = parcelHelpers.interopDefault(_myProjects);
 var _contactMe = require("./contactMe");
 var _contactMeDefault = parcelHelpers.interopDefault(_contactMe);
+var _viewNotFound = require("./viewNotFound");
+var _viewNotFoundDefault = parcelHelpers.interopDefault(_viewNotFound);
 
-},{"./about":"eVPt3","./home":"9oi32","./meetMe":"aBCsr","./myAwards":"9tzTM","./myProjects":"6tJ1Y","./contactMe":"2J00F","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eVPt3":[function(require,module,exports) {
+},{"./about":"eVPt3","./home":"9oi32","./meetMe":"aBCsr","./myAwards":"9tzTM","./myProjects":"6tJ1Y","./contactMe":"2J00F","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./viewNotFound":"hBoyt"}],"eVPt3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
@@ -15645,17 +15651,57 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
 var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+var _bdyPng = require("./assets/img/bdy.png");
+var _bdyPngDefault = parcelHelpers.interopDefault(_bdyPng);
 exports.default = ()=>(0, _htmlLiteralDefault.default)`
 <span id="namesAndPic" style="height:48vw">
         <div id="names">
-        <h1 id="name">Quinton</h1>
-        <h1 id="lname">Taylor</h1>
+        <h1 id="name"></h1>
+        <h1 id="lname"></h1>
         </div>
-        <img id="headshot" src="./images/body.png">
+        <img id= "headshot" src=${0, _bdyPngDefault.default}>
         </span>
 `;
 
-},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aBCsr":[function(require,module,exports) {
+},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/img/bdy.png":"7bxL9"}],"7bxL9":[function(require,module,exports) {
+module.exports = require("7d1f2afef969eb0a").getBundleURL("UckoE") + "bdy.37688904.png" + "?" + Date.now();
+
+},{"7d1f2afef969eb0a":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"aBCsr":[function(require,module,exports) {
 
 },{}],"9tzTM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -15746,7 +15792,23 @@ exports.default = ()=>(0, _htmlLiteralDefault.default)`
        
         `;
 
-},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4psvf":[function(require,module,exports) {
+},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hBoyt":[function(require,module,exports) {
+/* eslint-disable prettier/prettier */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _htmlLiteral = require("html-literal");
+var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+var _404Png = require("./assets/img/404.png");
+var _404PngDefault = parcelHelpers.interopDefault(_404Png);
+exports.default = ()=>(0, _htmlLiteralDefault.default)`
+    <div id="oops">
+        <img src="${0, _404PngDefault.default}" alt="View Not Found"/>
+        
+`;
+
+},{"html-literal":"amMXC","./assets/img/404.png":"6n1Tt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6n1Tt":[function(require,module,exports) {
+module.exports = require("724ac972ad411662").getBundleURL("UckoE") + "404.da4091ca.png" + "?" + Date.now();
+
+},{"724ac972ad411662":"lgJ39"}],"4psvf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
@@ -15757,72 +15819,43 @@ exports.default = ()=>(0, _htmlLiteralDefault.default)`
   </footer>
 `;
 
-},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"71t6G":[function(require,module,exports) {
+},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kuKN0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "aboutMe", ()=>(0, _aboutDefault.default));
-parcelHelpers.export(exports, "home", ()=>(0, _homeDefault.default));
-parcelHelpers.export(exports, "contactMe", ()=>(0, _contactMeDefault.default));
-parcelHelpers.export(exports, "order", ()=>(0, _meetMeDefault.default));
-parcelHelpers.export(exports, "myAwards", ()=>(0, _myAwardsDefault.default));
-parcelHelpers.export(exports, "myProjects", ()=>(0, _myProjectsDefault.default)) //export { default as viewNotFound } from "./viewNotFound";
-;
-var _about = require("./about");
-var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _home = require("./home");
-var _homeDefault = parcelHelpers.interopDefault(_home);
-var _contactMe = require("./contactMe");
-var _contactMeDefault = parcelHelpers.interopDefault(_contactMe);
-var _meetMe = require("./meetMe");
-var _meetMeDefault = parcelHelpers.interopDefault(_meetMe);
-var _myAwards = require("./myAwards");
-var _myAwardsDefault = parcelHelpers.interopDefault(_myAwards);
-var _myProjects = require("./myProjects");
-var _myProjectsDefault = parcelHelpers.interopDefault(_myProjects);
-
-},{"./about":"hSbb9","./home":"iXs9i","./contactMe":"lmj7L","./meetMe":"jZo30","./myAwards":"cDfeg","./myProjects":"bSqeZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hSbb9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "aboutMe"
+var _htmlLiteral = require("html-literal");
+var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+var _navItemJs = require("./navItem.js");
+var _navItemJsDefault = parcelHelpers.interopDefault(_navItemJs);
+// constructing an HTML list of items from the array in Store
+//  - .map formats the array elements into html
+//      and constructs a new array from the results
+//  - .join joins the elements of the new array into one long string
+//  - data-navigo is a switch that allows Navigo to handle our page routing
+exports.default = (navItems)=>{
+    return (0, _htmlLiteralDefault.default)`
+    <nav>
+        <i class="nav-bars"></i>
+        <ul class="hidden--mobile">
+            ${navItems.map((item)=>(0, _navItemJsDefault.default)(item)).join("")}
+</ul>
+</nav>
+    `;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iXs9i":[function(require,module,exports) {
+},{"./navItem.js":"dt3b8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","html-literal":"amMXC"}],"dt3b8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "home"
+var _htmlLiteral = require("html-literal");
+var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+exports.default = (item)=>{
+    return (0, _htmlLiteralDefault.default)`
+    <li>
+        <button class="${item.class}"><a href="${item.url}"  data-navigo>${item.text}</a></button>
+    </li> 
+`;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lmj7L":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "contactMe"
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jZo30":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "meetMe"
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cDfeg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "myAwards"
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bSqeZ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-exports.default = {
-    view: "myProjects"
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
+},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -20523,6 +20556,120 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["km5uZ","bB7Pu"], "bB7Pu", "parcelRequire27f1")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"71t6G":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "about", ()=>(0, _aboutDefault.default));
+parcelHelpers.export(exports, "home", ()=>(0, _homeDefault.default));
+parcelHelpers.export(exports, "contactMe", ()=>(0, _contactMeDefault.default));
+parcelHelpers.export(exports, "nav", ()=>(0, _navDefault.default));
+parcelHelpers.export(exports, "meetMe", ()=>(0, _meetMeDefault.default));
+parcelHelpers.export(exports, "myAwards", ()=>(0, _myAwardsDefault.default));
+parcelHelpers.export(exports, "myProjects", ()=>(0, _myProjectsDefault.default));
+parcelHelpers.export(exports, "viewNotFound", ()=>(0, _viewNotFoundDefault.default));
+var _about = require("./about");
+var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _home = require("./home");
+var _homeDefault = parcelHelpers.interopDefault(_home);
+var _contactMe = require("./contactMe");
+var _contactMeDefault = parcelHelpers.interopDefault(_contactMe);
+var _nav = require("./nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _meetMe = require("./meetMe");
+var _meetMeDefault = parcelHelpers.interopDefault(_meetMe);
+var _myAwards = require("./myAwards");
+var _myAwardsDefault = parcelHelpers.interopDefault(_myAwards);
+var _myProjects = require("./myProjects");
+var _myProjectsDefault = parcelHelpers.interopDefault(_myProjects);
+var _viewNotFound = require("./viewNotFound");
+var _viewNotFoundDefault = parcelHelpers.interopDefault(_viewNotFound);
+
+},{"./about":"hSbb9","./home":"iXs9i","./contactMe":"lmj7L","./meetMe":"jZo30","./myAwards":"cDfeg","./myProjects":"bSqeZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./nav":"9QJ7N","./viewNotFound":"lMpLB"}],"hSbb9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "aboutMe"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iXs9i":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "home"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lmj7L":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "contactMe"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jZo30":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "meetMe"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cDfeg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "myAwards"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bSqeZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    view: "myProjects"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9QJ7N":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = [
+    {
+        url: "/home",
+        text: "Home",
+        class: "whiteButton"
+    },
+    {
+        url: "/about",
+        text: "About",
+        class: "greenButton"
+    },
+    {
+        url: "/contactMe",
+        text: "ContactMe",
+        class: "whiteButton"
+    },
+    {
+        url: "/meetMe",
+        text: "MeetMe",
+        class: "greenButton"
+    },
+    {
+        url: "/myAwards",
+        text: "MyAwards",
+        class: "whiteButton"
+    },
+    {
+        url: "/myProjects",
+        text: "Myprojects",
+        class: "greenButton"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lMpLB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = {
+    header: "View Not Found",
+    view: "viewNotFound"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["km5uZ","bB7Pu"], "bB7Pu", "parcelRequire920f")
 
 //# sourceMappingURL=index.3d214d75.js.map
