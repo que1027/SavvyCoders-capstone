@@ -2,7 +2,6 @@ import html from "html-literal";
 
 export default () => html`
             <form
-      action="https://formspree.io/f/mbjnbgbv"
       method="POST"
     >
       <label>
@@ -23,3 +22,4 @@ export default () => html`
        
        
         `;
+        //debugger;

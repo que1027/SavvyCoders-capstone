@@ -1,29 +1,6 @@
-body{
-    background-color: black;
-}
-#Email{
-    margin-left:35%;
-    margin-top: 10%;
-}
-#ESubject{
-    width:40%;
-    border-radius: 16px;
-    }
-    #EBody{
-        width: 41%;
-        height: 20vw;
-        border-radius: 16px; 
-    }
-    #ESubmit{
-        width:41%;
-        border-radius: 16px;
-        background-color:green; 
-        }
-    form{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-    }
+
+
+
     #home{
         color:white;
         background-color:green; 

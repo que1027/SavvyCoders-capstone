@@ -7,10 +7,10 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
-function render(state = store.home) {
+function render(currentState = store.home) {
     document.querySelector("#root").innerHTML = `
-    ${header(state)}
-    ${main(state)}
+    ${header(currentState)}
+    ${main(currentState)}
     ${nav(store.nav)}
     ${footer()}
     `;
@@ -23,6 +23,12 @@ function afterRender() {
     document.querySelector(".nav-bars").addEventListener("click", () => {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile");
     });
+
+
+// hbMenu.addEventListener("click", ()=>{
+// buttons.style.display = "flex"
+// slide.style.left = "-1vw";
+// });
   }
 router.on({
     "/": () => render(store.home),
@@ -35,11 +41,6 @@ router.on({
             render(store.viewNotFound);
             console.log(`View ${view} not defined`);
         }
-    },
+    }
 })
 .resolve();
-
-
-
-
-

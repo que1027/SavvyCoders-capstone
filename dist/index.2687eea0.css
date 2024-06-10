@@ -5,11 +5,9 @@ body {
 #namesAndPic {
   flex-direction: row;
   display: flex;
-  position: absolute;
-  top: 17px;
 }
 
-#names {
+#names, #root {
   flex-direction: column;
   display: flex;
 }
@@ -22,14 +20,6 @@ body {
 #lname {
   color: green;
   font-size: 6vw;
-}
-
-#list {
-  color: #fff;
-  width: 35vw;
-  height: 40vw;
-  font-size: 5vw;
-  overflow-y: scroll;
 }
 
 #headshot {
@@ -47,8 +37,6 @@ button {
 
 .hidden--mobile {
   display: flex;
-  position: absolute;
-  top: 41vw;
 }
 
 .whiteButton {
@@ -79,6 +67,90 @@ footer {
   display: flex;
   position: relative;
   left: 750px;
+}
+
+#Email {
+  margin-top: 10%;
+  margin-left: 35%;
+}
+
+#ESubject {
+  border-radius: 16px;
+  width: 40%;
+}
+
+#EBody {
+  border-radius: 16px;
+  width: 41%;
+  height: 20vw;
+}
+
+#ESubmit {
+  background-color: green;
+  border-radius: 16px;
+  width: 41%;
+}
+
+form {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+p {
+  color: #fff;
+  margin: 10%;
+}
+
+#AboutMe {
+  color: #fff;
+  flex-direction: column-reverse;
+  margin-top: 10%;
+  margin-left: 43%;
+  font-size: medium;
+  display: flex;
+}
+
+p {
+  margin: 10px;
+}
+
+#projects {
+  justify-content: space-between;
+  display: flex;
+}
+
+#list {
+  color: #fff;
+  width: 35vw;
+  height: 40vw;
+  font-size: 5vw;
+  overflow-y: scroll;
+}
+
+#language1:hover, #language2:hover, #language3:hover, #language4:hover {
+  transform: translateY(-8px);
+}
+
+#screen {
+  align-self: center;
+  display: flex;
+}
+
+#table {
+  color: #fff;
+  justify-content: center;
+  display: flex;
+}
+
+#whiteday {
+  color: green;
+  background-color: #fff;
+}
+
+#greenday {
+  color: #fff;
+  background-color: green;
 }
 
 @media (width <= 667px) {

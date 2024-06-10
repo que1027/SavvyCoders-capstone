@@ -1,0 +1,46 @@
+body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+#projects {
+  justify-content: space-between;
+  display: flex;
+}
+
+#list {
+  color: #fff;
+  width: 35vw;
+  height: 40vw;
+  font-size: 5vw;
+  overflow-y: scroll;
+}
+
+#language1:hover, #language2:hover, #language3:hover, #language4:hover {
+  transform: translateY(-8px);
+}
+
+#screen {
+  align-self: center;
+  display: flex;
+}
+
+button {
+  border-radius: 16px;
+  font-size: 2vw;
+}
+
+#socials {
+  position: absolute;
+  left: 88vw;
+}
+
+.whiteButton {
+  background-color: #fff;
+}
+
+.greenButton {
+  color: #fff;
+  background-color: green;
+}
+/*# sourceMappingURL=index.c1529fcb.css.map */

@@ -1,0 +1,19 @@
+body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+#socials {
+  position: absolute;
+  left: 88vw;
+}
+
+.whiteButton {
+  background-color: #fff;
+}
+
+.greenButton {
+  color: #fff;
+  background-color: green;
+}
+/*# sourceMappingURL=index.f78c01d3.css.map */

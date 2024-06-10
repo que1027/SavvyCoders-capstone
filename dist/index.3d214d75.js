@@ -593,10 +593,10 @@ var _indexJs = require("./store/index.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const router = new (0, _navigoDefault.default)("/");
-function render(state = _indexJs.home) {
+function render(currentState = _indexJs.home) {
     document.querySelector("#root").innerHTML = `
-    ${(0, _components.header)(state)}
-    ${(0, _components.main)(state)}
+    ${(0, _components.header)(currentState)}
+    ${(0, _components.main)(currentState)}
     ${(0, _components.nav)(_indexJs.nav)}
     ${(0, _components.footer)()}
     `;
@@ -608,6 +608,10 @@ function afterRender() {
     document.querySelector(".nav-bars").addEventListener("click", ()=>{
         document.querySelector("nav > ul").classList.toggle("hidden--mobile");
     });
+// hbMenu.addEventListener("click", ()=>{
+// buttons.style.display = "flex"
+// slide.style.left = "-1vw";
+// });
 }
 router.on({
     "/": ()=>render(_indexJs.home),
@@ -15702,35 +15706,105 @@ exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
 },{}],"aBCsr":[function(require,module,exports) {
-
-},{}],"9tzTM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
 var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+var _bdyPng = require("./assets/img/bdy.png");
+var _bdyPngDefault = parcelHelpers.interopDefault(_bdyPng);
 exports.default = ()=>(0, _htmlLiteralDefault.default)`
-<div id="certificates-container">
-    <div class="certificate">
-      <img src="HTMLCert.jpg" alt="HTML">
+<span id="calendar">
+<table id="table">
+<tr>
+<button><</button><th>Month Name</th><button>></button>
+</tr>
+<tr>
+<td id="greenday">0 Day</td>    
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+</tr>
+<tr>
+<td id="greenday">0 Day</td>    
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+</tr>
+<tr>
+<td id="greenday">0 Day</td>    
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+</tr>
+<tr>
+<td id="greenday">0 Day</td>    
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+</tr>
+<tr>
+<td id="greenday">0 Day</td>    
+<td id="whiteday">0 Day</td> 
+<td id="greenday">0 Day</td> 
+ 
+</tr>
+</table>
+        </span>
+`;
+
+},{"html-literal":"amMXC","./assets/img/bdy.png":"7bxL9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9tzTM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _htmlLiteral = require("html-literal");
+var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
+var _csJpg = require("./assets/img/cs.jpg");
+var _csJpgDefault = parcelHelpers.interopDefault(_csJpg);
+var _htmlcertJpg = require("./assets/img/HTMLCert.jpg");
+var _htmlcertJpgDefault = parcelHelpers.interopDefault(_htmlcertJpg);
+var _jscertJpg = require("./assets/img/JSCert.jpg");
+var _jscertJpgDefault = parcelHelpers.interopDefault(_jscertJpg);
+exports.default = ()=>(0, _htmlLiteralDefault.default)`
+   
+      <img src=${0, _htmlcertJpgDefault.default} alt="HTML">
       <div class="caption">HTML</div>
     </div>
     <div class="certificate">
-      <img src="JSCert.jpg" alt="Javascript">
+      <img src=${0, _jscertJpgDefault.default} alt="Javascript">
       <div class="caption">Javascript</div>
     </div>
     <div class="certificate">
-        <img src="cs.jpg" alt="AZ-900">
+        <img src=${0, _csJpgDefault.default} alt="AZ-900">
         <div class="caption">AZ-900</div>
       </div>
       <div class="certificate">
-            <img src="cs.jpg" alt="Agile">
+            <img src=${0, _csJpgDefault.default} alt="Agile">
             <div class="caption">Agile</div>
           </div>
-    <!-- Add more certificate divs as needed -->
-  </div>
+  
   `;
 
-},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6tJ1Y":[function(require,module,exports) {
+},{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/img/HTMLCert.jpg":"dCt71","./assets/img/JSCert.jpg":"6kREv","./assets/img/cs.jpg":"fFhAJ"}],"dCt71":[function(require,module,exports) {
+module.exports = require("2db8bf26e3b27149").getBundleURL("UckoE") + "HTMLCert.ac937af6.jpg" + "?" + Date.now();
+
+},{"2db8bf26e3b27149":"lgJ39"}],"6kREv":[function(require,module,exports) {
+module.exports = require("689cbd582eeef8af").getBundleURL("UckoE") + "JSCert.5521411e.jpg" + "?" + Date.now();
+
+},{"689cbd582eeef8af":"lgJ39"}],"fFhAJ":[function(require,module,exports) {
+module.exports = require("64dd0a43dd47ed86").getBundleURL("UckoE") + "cs.345f575b.jpg" + "?" + Date.now();
+
+},{"64dd0a43dd47ed86":"lgJ39"}],"6tJ1Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _htmlLiteral = require("html-literal");
@@ -15770,7 +15844,6 @@ var _htmlLiteral = require("html-literal");
 var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
 exports.default = ()=>(0, _htmlLiteralDefault.default)`
             <form
-      action="https://formspree.io/f/mbjnbgbv"
       method="POST"
     >
       <label>
@@ -15790,7 +15863,7 @@ exports.default = ()=>(0, _htmlLiteralDefault.default)`
     </form>
        
        
-        `;
+        `; //debugger;
 
 },{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hBoyt":[function(require,module,exports) {
 /* eslint-disable prettier/prettier */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -15815,7 +15888,7 @@ var _htmlLiteral = require("html-literal");
 var _htmlLiteralDefault = parcelHelpers.interopDefault(_htmlLiteral);
 exports.default = ()=>(0, _htmlLiteralDefault.default)`
   <footer>
-    &copy; 2024 <a href="https://zax-online.com/">Zax-Online.com</a>
+    <!-- &copy; 2024 <a href="https://zax-online.com/">Zax-Online.com</a> -->
   </footer>
 `;
 
@@ -20642,22 +20715,22 @@ exports.default = [
     },
     {
         url: "/contactMe",
-        text: "ContactMe",
+        text: "Contact Me",
         class: "whiteButton"
     },
     {
         url: "/meetMe",
-        text: "MeetMe",
+        text: "Meet Me",
         class: "greenButton"
     },
     {
         url: "/myAwards",
-        text: "MyAwards",
+        text: "My Awards",
         class: "whiteButton"
     },
     {
         url: "/myProjects",
-        text: "Myprojects",
+        text: "My projects",
         class: "greenButton"
     }
 ];
