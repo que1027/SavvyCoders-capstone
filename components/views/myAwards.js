@@ -1,23 +1,24 @@
 import html from "html-literal";
+import comingSoon from "./assets/img/cs.jpg";
+import HTML from "./assets/img/HTMLCert.jpg";
+import js from "./assets/img/JSCert.jpg";
 
 export default () => html`
-<div id="certificates-container">
-    <div class="certificate">
-      <img src="HTMLCert.jpg" alt="HTML">
+   
+      <img src=${HTML} alt="HTML">
       <div class="caption">HTML</div>
     </div>
     <div class="certificate">
-      <img src="JSCert.jpg" alt="Javascript">
+      <img src=${js} alt="Javascript">
       <div class="caption">Javascript</div>
     </div>
     <div class="certificate">
-        <img src="cs.jpg" alt="AZ-900">
+        <img src=${comingSoon} alt="AZ-900">
         <div class="caption">AZ-900</div>
       </div>
       <div class="certificate">
-            <img src="cs.jpg" alt="Agile">
+            <img src=${comingSoon} alt="Agile">
             <div class="caption">Agile</div>
           </div>
-    <!-- Add more certificate divs as needed -->
-  </div>
+  
   `;

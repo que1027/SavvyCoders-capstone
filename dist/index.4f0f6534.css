@@ -1,0 +1,53 @@
+body {
+  background-color: #fff;
+}
+
+#Email {
+  margin-top: 10%;
+  margin-left: 35%;
+}
+
+#ESubject {
+  border-radius: 16px;
+  width: 40%;
+}
+
+#EBody {
+  border-radius: 16px;
+  width: 41%;
+  height: 20vw;
+}
+
+#ESubmit {
+  background-color: green;
+  border-radius: 16px;
+  width: 41%;
+}
+
+form {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+#home {
+  color: #fff;
+  background-color: green;
+  border-radius: 16px;
+  font-size: 1.3vw;
+}
+
+#socials {
+  position: absolute;
+  left: 88vw;
+}
+
+.whiteButton {
+  background-color: #fff;
+}
+
+.greenButton {
+  color: #fff;
+  background-color: green;
+}
+/*# sourceMappingURL=index.4f0f6534.css.map */
