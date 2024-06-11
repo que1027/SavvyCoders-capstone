@@ -4,22 +4,22 @@ import HTML from "./assets/img/HTMLCert.jpg";
 import js from "./assets/img/JSCert.jpg";
 
 export default () => html`
-   
-      <img src=${HTML} alt="HTML">
+<div id="certificates-container">
+    <div class="certificate">
+      <img class="cert" src=${HTML} alt="HTML">
       <div class="caption">HTML</div>
     </div>
     <div class="certificate">
-      <img src=${js} alt="Javascript">
+      <img class="cert" src=${js} alt="Javascript">
       <div class="caption">Javascript</div>
     </div>
     <div class="certificate">
-        <img src=${comingSoon} alt="AZ-900">
+        <img class="cert" src=${comingSoon} alt="AZ-900">
         <div class="caption">AZ-900</div>
       </div>
       <div class="certificate">
-            <img src=${comingSoon} alt="Agile">
+            <img class="cert" src=${comingSoon} alt="Agile">
             <div class="caption">Agile</div>
           </div>
-  
-          
+  </div>
   `;
