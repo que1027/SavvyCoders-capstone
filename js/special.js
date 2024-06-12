@@ -28,3 +28,7 @@ hbMenu.addEventListener("click", ()=>{
 buttons.style.display = "flex"
 slide.style.left = "-1vw";
 });
+
+
+
+

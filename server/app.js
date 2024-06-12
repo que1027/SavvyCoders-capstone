@@ -27,6 +27,13 @@ db.once(
     console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 //this too
+// Logging Middleware
+const logging = (request, response, next) => {
+  console.log(
+    `${request.method} ${request.url} ${new Date().toLocaleString("en-us")}`
+  );
+  next();
+};
 //CORS Middleware
 const cors = (request, response, next) => {
     response.setHeader(
@@ -52,4 +59,4 @@ app.get("/status", (request, response) => {
 });
 //app.use("/apiname", apiname);
 //Tell the Express app to start listening and log it
-//app.listen(PORT, ()=> console.log(`Listening on port ${PORT}`));
+app.listen(PORT, ()=> console.log(`Listening on port ${PORT}`));

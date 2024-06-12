@@ -1,70 +1,12 @@
+/*Dtuff that don't change*/
 body{
     background-color: black;
-
-
- /* overflow-y: hidden;
-  overflow-x: hidden;  */
-}
-
-#namesAndPic{
-
-    display:flex;
-    flex-direction: row;
-
-}
-#names{
-    display:flex;
-    flex-direction: column;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
 }
 #root{
     display:flex;
     flex-direction: column;
-}
-#name{
-    color:white;
-    font-size:6vw;
-}
-#lname{
-    color:green;
-    font-size:6vw;
-}
-#list{
-    color:white;
-    overflow-y:scroll;
-    font-size: 5vw;
-    height:40vw;
-    width:35vw;
-}
-#headshot{
-    display:flex;
-    padding-left: 20vw;
-    height:40vw;
-    width:40vw;
-    margin:auto;
-}
-
-button{
-    border-radius: 16px;
-    font-size: 2vw;
-}
-.hidden--mobile{
-    display: flex;
-    /* position: absolute;
-    top:41vw; */
-}
-.whiteButton{
-    background-color:white;
-    
-}
-.greenButton{
-    background-color:green; 
-}
-#hbMenu{
-display: none;
-}
-#menu{
-    display:flex;
-    flex-direction: row;
 }
 footer{
     position:absolute;
@@ -78,89 +20,164 @@ justify-content:space-between;
 position: relative;
 left:750px;
 }
-#Email{
-    margin-left:35%;
-    margin-top: 10%;
-}
-#ESubject{
-    width:40%;
-    border-radius: 16px;
-}
-#EBody{
-        width: 41%;
-        height: 20vw;
-        border-radius: 16px; 
-}
-#ESubmit{
-        width:41%;
-        border-radius: 16px;
-        background-color:green; 
+    /*Navigation*/
+
+        button{
+            border-radius: 16px;
+            font-size: 2vw;
+        }
+        .hidden--mobile{
+            display: flex;
+            /* position: absolute;
+            top:41vw; */
+        }
+        .whiteButton{
+            background-color:white;
+            
+        }
+        .greenButton{
+            background-color:green; 
+        }
+        #hbMenu{
+        display: none;
+        }
+        #menu{
+            display:flex;
+            flex-direction: row;
+        }
+/*Home*/
+    /*name and pic*/
+    #headshot{
+        display:flex;
+        padding-left: 20vw;
+        height:40vw;
+        width:40vw;
+        margin:auto;
     }
-form{
+    #namesAndPic{
+
+        display:flex;
+        flex-direction: row;
+
+    }
+    #names{
         display:flex;
         flex-direction: column;
-        align-items: center;
-}
+    }
+
+    #name{
+        color:white;
+        font-size:6vw;
+    }
+    #lname{
+        color:green;
+        font-size:6vw;
+    }
+
+/*Contact Me*/
+    #Email{
+        margin-left:35%;
+        margin-top: 10%;
+    }
+    #ESubject{
+        width:40%;
+        border-radius: 16px;
+    }
+    #EBody{
+            width: 41%;
+            height: 20vw;
+            border-radius: 16px; 
+    }
+    #ESubmit{
+            width:41%;
+            border-radius: 16px;
+            background-color:green; 
+        }
+    form{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+    }
+/*About Me*/
 p{
     color:white;
     margin:10%;
 }
-#AboutMe{
-    display:flex;
-    margin-left: 43%;
-    margin-top: 10%;
-    color:white;
-    flex-direction:column-reverse;
-    font-size: medium;
-   
-}
-p{
-    margin:10px;
-}
-
-  #projects{
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-}
-#list{
-    color:white;
-    overflow-y:scroll;
-    font-size: 5vw;
-    height:40vw;
-    width:35vw;
-}
-#language1:hover {
-    transform: translateY(-8px);
-}
-#language2:hover {
-    transform: translateY(-8px);
-}
-#language3:hover {
-    transform: translateY(-8px);
-}
-#language4:hover {
-    transform: translateY(-8px);
-}
-#screen{
-    display: flex;
-align-self:center;
-}
-#table{
-    display:flex; 
-     justify-content: center;
-   color:white;
-
+    #AboutMe{
+        display:flex;
+        margin-left: 43%;
+        margin-top: 10%;
+        color:white;
+        flex-direction:column-reverse;
+        font-size: medium;
     
-}
-#whiteday{
-    background-color: white;
-    color:green;
-}
-#greenday{
-    background-color: green;
+    }
+    p{
+        margin:10px;
+    }
+/*My Awards*/
+
+    #certificates-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:30px
+    }
+    .cert{
+    width:300px;
+    }
+    .cert:hover{
+        width:310px;
+        }
+/*MyProjects*/
+    /*list*/
+    #projects{
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+    }
+    #list{
+        color:white;
+        overflow-y:scroll;
+        font-size: 5vw;
+        height:40vw;
+        width:35vw;
+    }
+    /*Movement On Hover*/
+    #language1:hover {
+        transform: translateY(-8px);
+    }
+    #language2:hover {
+        transform: translateY(-8px);
+    }
+    #language3:hover {
+        transform: translateY(-8px);
+    }
+    #language4:hover {
+        transform: translateY(-8px);
+    }
+    /*Screen and animation*/
+    #screen{
+        display: flex;
+    align-self:center;
+    }
+/*Meet Me*/
+    /*Calandar*/
+    #table{
+        display:flex; 
+        justify-content: center;
     color:white;
-}
+
+        
+    }
+    #whiteday{
+        background-color: white;
+        color:green;
+    }
+    #greenday{
+        background-color: green;
+        color:white;
+    }
 
 
 

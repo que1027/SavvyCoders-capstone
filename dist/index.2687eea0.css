@@ -2,32 +2,22 @@ body {
   background-color: #000;
 }
 
-#namesAndPic {
-  flex-direction: row;
-  display: flex;
-}
-
-#names, #root {
+#root {
   flex-direction: column;
   display: flex;
 }
 
-#name {
-  color: #fff;
-  font-size: 6vw;
-}
-
-#lname {
-  color: green;
-  font-size: 6vw;
-}
-
-#headshot {
-  width: 40vw;
-  height: 40vw;
-  margin: auto;
-  padding-left: 20vw;
+footer {
   display: flex;
+  position: absolute;
+  top: 60vw;
+}
+
+#socials {
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  left: 750px;
 }
 
 button {
@@ -56,17 +46,32 @@ button {
   display: flex;
 }
 
-footer {
+#headshot {
+  width: 40vw;
+  height: 40vw;
+  margin: auto;
+  padding-left: 20vw;
   display: flex;
-  position: absolute;
-  top: 60vw;
 }
 
-#socials {
-  justify-content: space-between;
+#namesAndPic {
+  flex-direction: row;
   display: flex;
-  position: relative;
-  left: 750px;
+}
+
+#names {
+  flex-direction: column;
+  display: flex;
+}
+
+#name {
+  color: #fff;
+  font-size: 6vw;
+}
+
+#lname {
+  color: green;
+  font-size: 6vw;
 }
 
 #Email {
@@ -113,6 +118,21 @@ p {
 
 p {
   margin: 10px;
+}
+
+#certificates-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  display: flex;
+}
+
+.cert {
+  width: 300px;
+}
+
+.cert:hover {
+  width: 310px;
 }
 
 #projects {

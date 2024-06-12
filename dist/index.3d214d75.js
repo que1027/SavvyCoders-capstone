@@ -15716,47 +15716,42 @@ exports.default = ()=>(0, _htmlLiteralDefault.default)`
 <span id="calendar">
 <table id="table">
 <tr>
-<button><</button><th>Month Name</th><button>></button>
-</tr>
+<button><</button><th>Month Name</th><button>></button>/tr>
 <tr>
 <td id="greenday">0 Day</td>    
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
-<td id="greenday">0 Day</td> 
-</tr>
+<td id="whiteday">Day</td> 
+<td id="greenday">0 Day</td> /tr>
 <tr>
 <td id="greenday">0 Day</td>    
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
-<td id="greenday">0 Day</td> 
-</tr>
+<td id="whiteday">Day</td> 
+<td id="greenday">0 Day</td> /tr>
 <tr>
 <td id="greenday">0 Day</td>    
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
-<td id="greenday">0 Day</td> 
-</tr>
+<td id="whiteday">Day</td> 
+<td id="greenday">0 Day</td> /tr>
 <tr>
 <td id="greenday">0 Day</td>    
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
-<td id="whiteday">0 Day</td> 
-<td id="greenday">0 Day</td> 
-</tr>
+<td id="whiteday">Day</td> 
+<td id="greenday">0 Day</td> /tr>
 <tr>
 <td id="greenday">0 Day</td>    
-<td id="whiteday">0 Day</td> 
+<td id="whiteday">Day</td> 
 <td id="greenday">0 Day</td> 
  
 </tr>
@@ -15776,23 +15771,24 @@ var _htmlcertJpgDefault = parcelHelpers.interopDefault(_htmlcertJpg);
 var _jscertJpg = require("./assets/img/JSCert.jpg");
 var _jscertJpgDefault = parcelHelpers.interopDefault(_jscertJpg);
 exports.default = ()=>(0, _htmlLiteralDefault.default)`
-   
-      <img src=${0, _htmlcertJpgDefault.default} alt="HTML">
+<div id="certificates-container">
+    <div class="certificate">
+      <img class="cert" src=${0, _htmlcertJpgDefault.default} alt="HTML">
       <div class="caption">HTML</div>
     </div>
     <div class="certificate">
-      <img src=${0, _jscertJpgDefault.default} alt="Javascript">
+      <img class="cert" src=${0, _jscertJpgDefault.default} alt="Javascript">
       <div class="caption">Javascript</div>
     </div>
     <div class="certificate">
-        <img src=${0, _csJpgDefault.default} alt="AZ-900">
+        <img class="cert" src=${0, _csJpgDefault.default} alt="AZ-900">
         <div class="caption">AZ-900</div>
       </div>
       <div class="certificate">
-            <img src=${0, _csJpgDefault.default} alt="Agile">
+            <img class="cert" src=${0, _csJpgDefault.default} alt="Agile">
             <div class="caption">Agile</div>
           </div>
-  
+  </div>
   `;
 
 },{"html-literal":"amMXC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/img/HTMLCert.jpg":"dCt71","./assets/img/JSCert.jpg":"6kREv","./assets/img/cs.jpg":"fFhAJ"}],"dCt71":[function(require,module,exports) {
